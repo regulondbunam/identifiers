@@ -1,3 +1,5 @@
+LICENSE
+README.md
 setup.py
 identifiers_api/__init__.py
 identifiers_api.egg-info/PKG-INFO

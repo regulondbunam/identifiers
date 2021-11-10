@@ -1,3 +1,12 @@
+ALIAS_HT = {
+    'RHTECOLIBS': 'A',
+    'RHTECOLITU': 'B',
+    'RHTECOLITS': 'C',
+    'RHTECOLIGE': 'D',
+    'RHTECOLITT': 'E',
+    'RHTECOLITS': 'F',
+    'RHTECOLIRG': 'G',
+}
 REGULONDB_DATABASES_ACRONYMS = {
     "regulondbmultigenomic": "RDB",
     "regulondbht": "RHT"
@@ -17,7 +26,7 @@ RDB_MULTIGENOMIC_SUBCLASS_ACRONYMS = {
     "regulatoryContinuants": "CNC",
     "regulatoryInteractions": "RIC",
     "sigmaFactors": "SFC",
-    #"transcriptionFactorRegulatorySites": "STC",
+    # "transcriptionFactorRegulatorySites": "STC",
     "terminators": "TMC",
     "transcriptionFactors": "TFC",
     "regulatorySites": "BSC",
@@ -64,7 +73,7 @@ ONTOLOGY_SUBCLASS_ACRONYMS = {
 }
 
 
-#TODO: Ver con Gabo y Edgar
+# TODO: Ver con Gabo y Edgar
 DATAMARTS_ACRONYMS = {
     "overviews": ""
 }

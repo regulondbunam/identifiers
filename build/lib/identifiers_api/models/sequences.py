@@ -14,6 +14,12 @@ class Sequences(Document):
     def format_value(self):
         return "0" * (5 - len(str(self.value))) + str(self.value)
 
+    def format_value_ht_subclass(self):
+        return "0" * (9 - len(str(self.value))) + str(self.value)
+
+    def format_value_ht_authors(self):
+        return "0" * (7 - len(str(self.value))) + str(self.value)
+
     def update_sequence_value(self):
         self.update(value=self.value + 1)
         self.save()

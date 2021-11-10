@@ -1,3 +1,12 @@
+ALIAS_HT = {
+    'RHTECOLIBS': 'A',
+    'RHTECOLITU': 'B',
+    'RHTECOLITS': 'C',
+    'RHTECOLIGE': 'D',
+    'RHTECOLITT': 'E',
+    'RHTECOLITS': 'F',
+    'RHTECOLIRG': 'G',
+}
 REGULONDB_DATABASES_ACRONYMS = {
     "regulondbmultigenomic": "RDB",
     "regulondbht": "RHT"
