@@ -12,6 +12,7 @@ identifiers_api/models/identifiers.py
 identifiers_api/models/sequences.py
 identifiers_api/services/__init__.py
 identifiers_api/services/identifiers.py
+identifiers_api/services/regulondbht.py
 identifiers_api/services/regulondbmultigenomic.py
 identifiers_api/services/sequences.py
 identifiers_api/shared/__init__.py

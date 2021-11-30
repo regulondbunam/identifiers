@@ -12,22 +12,46 @@ def _set_identifier(identifiers_object, sequence):
     class_type = identifiers_object["type"]
     if "ontologies" == class_type:
         identifier = "".join([db_acronym, class_acronym, sub_class_acronym, "00001"])
+        return identifier
+    elif class_type == "dataset":
+        sub_class_acronym = RDB_HT_DATASET_TYPES[identifiers_object["datasetType"]]
+        sequence_value = sequence.format_value()
+        identifier = "".join([db_acronym, class_acronym, sub_class_acronym, sequence_value])
+        return identifier
+    elif "transcriptionTerminationSite" == class_type:
+        child_class_acronym = identifiers_object["childClassAcronym"]
+        sequence_value = sequence.format_value_ht_subclass()
+        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
+    elif "transcriptionStartSite" == class_type:
+        child_class_acronym = identifiers_object["childClassAcronym"]
+        sequence_value = sequence.format_value_ht_subclass()
+        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
+    elif "transcriptionUnit" == class_type:
+        child_class_acronym = identifiers_object["childClassAcronym"]
+        sequence_value = sequence.format_value_ht_subclass()
+        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
     elif "tfBinding" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
         identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
     elif "peaks" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
         identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
     elif "authorsData" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
-        sequence_value = sequence.format_value_ht_authors()
-        identifier = "".join([class_acronym, sub_class_acronym, child_class_acronym, sequence_value])
-    elif class_type != "tfBinding" and class_type != "peaks" and class_type != "authorsData":
+        sequence_value = sequence.format_value_ht_subclass()
+        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
+    else:
         sequence_value = sequence.format_value()
         identifier = "".join([db_acronym, class_acronym, sub_class_acronym, sequence_value])
-    return identifier
+        return identifier
 
 
 def create_identifiers_document(identifiers_object):

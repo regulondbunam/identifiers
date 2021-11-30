@@ -1,12 +1,3 @@
-ALIAS_HT = {
-    'RHTECOLIBS': 'A',
-    'RHTECOLITU': 'B',
-    'RHTECOLITS': 'C',
-    'RHTECOLIGE': 'D',
-    'RHTECOLITT': 'E',
-    'RHTECOLITS': 'F',
-    'RHTECOLIRG': 'G',
-}
 REGULONDB_DATABASES_ACRONYMS = {
     "regulondbmultigenomic": "RDB",
     "regulondbht": "RHT"
@@ -43,7 +34,24 @@ GLOBAL_CLASS_ACRONYMS = {
     "terms": "ONTOL"
 }
 
+RDB_HT_DATASET_TYPES = {
+    "TFBINDING": "BSD",
+    "GENE_EXPRESION": "GED",
+    "TSS": "TSD",
+    "TUS": "TUD",
+    "TTS": "TTD",
+    "REGULONS": "RGD"
+}
 RDB_HT_SUBCLASS_ACRONYMS = {
+    "dataset": "MDD",
+    "tfBinding": "BS",
+    "peaks": "PK",
+    "authorsData": "AD",
+    "transcriptionUnit": "TU",
+    "transcriptionStartSite": "TS",
+    "transcriptionTerminationSite": "TT",
+}
+RDB_HT_SUBCLASS_ACRONYMS_OLD = {
     "geneExpressions": "GED",
     "tfBindings": "BSD",
     "transcriptionStartSites": "SSD",

@@ -5,6 +5,7 @@ from identifiers_api.services.identifiers import create_id
 from identifiers_api.services.identifiers import get_identifiers
 from identifiers_api.services.identifiers import update_id
 from identifiers_api.services import regulondbmultigenomic
+from identifiers_api.services import regulondbht
 
 
 def connect(uri, database="regulondbidentifiers"):
