@@ -2,7 +2,6 @@ Metadata-Version: 2.1
 Name: identifiers-api
 Version: 0.1
 Summary: API for RegulonDB Identifiers DB
-Home-page: UNKNOWN
 Author: Pablo Pena
 Author-email: pablopl@ccg.unam.mx
 License: MIT

@@ -18,6 +18,16 @@ def _set_identifier(identifiers_object, sequence):
         sequence_value = sequence.format_value()
         identifier = "".join([db_acronym, class_acronym, sub_class_acronym, sequence_value])
         return identifier
+    elif "nlpGrowthConditions" == class_type:
+        child_class_acronym = identifiers_object["childClassAcronym"]
+        sequence_value = sequence.format_value_ht_subclass()
+        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
+    elif "geneExpression" == class_type:
+        child_class_acronym = identifiers_object["childClassAcronym"]
+        sequence_value = sequence.format_value_ht_subclass()
+        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        return identifier
     elif "transcriptionTerminationSite" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
@@ -79,7 +89,6 @@ def create_id(identifiers_object):
     object_id = _set_identifier(identifiers_object, sequence_associated)
     identifiers_object["_id"] = object_id
     identifiers_object["sequence_id"] = sequence_associated.id
-
     create_identifiers_document(identifiers_object)
 
     if identifiers_object["type"] != "ontologies":

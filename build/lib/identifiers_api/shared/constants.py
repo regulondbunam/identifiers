@@ -36,7 +36,7 @@ GLOBAL_CLASS_ACRONYMS = {
 
 RDB_HT_DATASET_TYPES = {
     "TFBINDING": "BSD",
-    "GENE_EXPRESION": "GED",
+    "GENE_EXPRESSION": "GED",
     "TSS": "TSD",
     "TUS": "TUD",
     "TTS": "TTD",
@@ -50,6 +50,8 @@ RDB_HT_SUBCLASS_ACRONYMS = {
     "transcriptionUnit": "TU",
     "transcriptionStartSite": "TS",
     "transcriptionTerminationSite": "TT",
+    "geneExpression": "GE",
+    "nlpGrowthConditions": "GC",
 }
 RDB_HT_SUBCLASS_ACRONYMS_OLD = {
     "geneExpressions": "GED",
