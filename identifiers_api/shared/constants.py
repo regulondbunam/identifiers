@@ -25,7 +25,8 @@ RDB_MULTIGENOMIC_SUBCLASS_ACRONYMS = {
 }
 
 ORGANISM_CLASS_ACRONYMS = {
-    "ecoli": "ECOLI"
+    "ecoli": "ECOLI",
+    "salmonella": "SALMO"
 }
 
 GLOBAL_CLASS_ACRONYMS = {
@@ -34,7 +35,26 @@ GLOBAL_CLASS_ACRONYMS = {
     "terms": "ONTOL"
 }
 
+RDB_HT_DATASET_TYPES = {
+    "TFBINDING": "BSD",
+    "GENE_EXPRESSION": "GED",
+    "TSS": "TSD",
+    "TUS": "TUD",
+    "TTS": "TTD",
+    "REGULONS": "RGD"
+}
 RDB_HT_SUBCLASS_ACRONYMS = {
+    "dataset": "MDD",
+    "tfBinding": "BS",
+    "peaks": "PK",
+    "authorsData": "AD",
+    "transcriptionUnit": "TU",
+    "transcriptionStartSite": "TS",
+    "transcriptionTerminationSite": "TT",
+    "geneExpression": "GE",
+    "nlpGrowthConditions": "GC",
+}
+RDB_HT_SUBCLASS_ACRONYMS_OLD = {
     "geneExpressions": "GED",
     "tfBindings": "BSD",
     "transcriptionStartSites": "SSD",
