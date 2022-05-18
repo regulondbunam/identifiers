@@ -11,56 +11,67 @@ def _set_identifier(identifiers_object, sequence):
     sub_class_acronym = identifiers_object["subClassAcronym"]
     class_type = identifiers_object["type"]
     if "ontologies" == class_type:
-        identifier = "".join([db_acronym, class_acronym, sub_class_acronym, "00001"])
+        identifier = "".join(
+            [db_acronym, class_acronym, sub_class_acronym, "00001"])
         return identifier
     elif class_type == "dataset":
         sub_class_acronym = RDB_HT_DATASET_TYPES[identifiers_object["datasetType"]]
         sequence_value = sequence.format_value()
-        identifier = "".join([db_acronym, class_acronym, sub_class_acronym, sequence_value])
+        identifier = "".join(
+            [db_acronym, class_acronym, sub_class_acronym, sequence_value])
         return identifier
     elif "nlpGrowthConditions" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     elif "geneExpression" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     elif "transcriptionTerminationSite" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     elif "transcriptionStartSite" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     elif "transcriptionUnit" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     elif "tfBinding" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     elif "peaks" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     elif "authorsData" == class_type:
         child_class_acronym = identifiers_object["childClassAcronym"]
         sequence_value = sequence.format_value_ht_subclass()
-        identifier = "".join([class_acronym, child_class_acronym, sequence_value])
+        identifier = "".join(
+            [class_acronym, child_class_acronym, sequence_value])
         return identifier
     else:
         sequence_value = sequence.format_value()
-        identifier = "".join([db_acronym, class_acronym, sub_class_acronym, sequence_value])
+        identifier = "".join(
+            [db_acronym, class_acronym, sub_class_acronym, sequence_value])
         return identifier
 
 
@@ -68,17 +79,23 @@ def create_identifiers_document(identifiers_object):
     identifier = Identifiers()
     identifier.id = identifiers_object.get("_id", None)
     identifier.creationDate = datetime.utcnow().strftime('%d-%m-%Y - %H:%M:%S')
-    identifier.createdOnRegulonDBRelease = identifiers_object.get("createdOnRegulonDBRelease", None)
-    identifier.lastRegulonDBReleaseUsed = identifiers_object.get("lastRegulonDBReleaseUsed", None)
+    identifier.createdOnRegulonDBRelease = identifiers_object.get(
+        "createdOnRegulonDBRelease", None)
+    identifier.lastRegulonDBReleaseUsed = identifiers_object.get(
+        "lastRegulonDBReleaseUsed", None)
     identifier.lastUpdate = datetime.utcnow().strftime('%d-%m-%Y - %H:%M:%S')
-    identifier.objectOriginalSourceId = identifiers_object.get("objectOriginalSourceId", None)
+    identifier.objectOriginalSourceId = identifiers_object.get(
+        "objectOriginalSourceId", None)
     identifier.ontologyName = identifiers_object.get("ontologyName", None)
     identifier.organism = identifiers_object.get("organism", None)
-    identifier.propertiesToMakeId = identifiers_object.get("propertiesToMakeId", None)
-    identifier.regulondbDatabase = identifiers_object.get("regulondbDatabase", None)
+    identifier.propertiesToMakeId = identifiers_object.get(
+        "propertiesToMakeId", None)
+    identifier.regulondbDatabase = identifiers_object.get(
+        "regulondbDatabase", None)
     identifier.sequence_id = identifiers_object.get("sequence_id", None)
     identifier.sourceDBName = identifiers_object.get("sourceDBName", None)
-    identifier.sourceDBVersion = identifiers_object.get("sourceDBVersion", None)
+    identifier.sourceDBVersion = identifiers_object.get(
+        "sourceDBVersion", None)
     identifier.type = identifiers_object.get("type", None)
     identifier.save(force_insert=True)
 
@@ -105,7 +122,8 @@ def update_id(object_id, regulondb_version):
 def get_identifiers(collection_name, regulondb_database, organism):
     mapping_identifiers = {}
 
-    identifiers = Identifiers.objects(type=collection_name, regulondbDatabase=regulondb_database, organism=organism).only("id").only("objectOriginalSourceId")
+    identifiers = Identifiers.objects(type=collection_name, regulondbDatabase=regulondb_database,
+                                      organism=organism).only("id").only("objectOriginalSourceId")
 
     for identifier in identifiers:
         mapping_identifiers[identifier.objectOriginalSourceId] = identifier.id
