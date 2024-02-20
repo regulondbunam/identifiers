@@ -18,3 +18,4 @@ class Identifiers(DynamicDocument):
     sourceDBName = fields.StringField(required=True)
     sourceDBVersion = fields.StringField(required=True)
     type = fields.StringField(required=True, db_field="type")
+    meta = {'db_alias': 'id_api'}

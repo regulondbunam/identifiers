@@ -25,7 +25,8 @@ RDB_MULTIGENOMIC_SUBCLASS_ACRONYMS = {
 }
 
 ORGANISM_CLASS_ACRONYMS = {
-    "ecoli": "ECOLI"
+    "ecoli": "ECOLI",
+    "salmonella": "SALMO"
 }
 
 GLOBAL_CLASS_ACRONYMS = {

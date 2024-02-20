@@ -9,8 +9,8 @@ from identifiers_api.services import regulondbht
 
 
 def connect(uri, database="regulondbidentifiers"):
-    mongoengine.connect(database, host=uri)
+    mongoengine.connect(database, alias='id_api', host=uri)
 
 
 def disconnect():
-    mongoengine.disconnect()
+    mongoengine.disconnect(alias='id_api')

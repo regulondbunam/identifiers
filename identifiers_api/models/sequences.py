@@ -10,6 +10,7 @@ class Sequences(Document):
     subclassAcronym = fields.StringField(required=True)
     type = fields.StringField(required=True, db_field="type")
     value = fields.IntField(required=True)
+    meta = {'db_alias': 'id_api'}
 
     def format_value(self):
         return "0" * (5 - len(str(self.value))) + str(self.value)
