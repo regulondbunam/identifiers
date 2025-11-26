@@ -10,6 +10,7 @@ RDB_MULTIGENOMIC_SUBCLASS_ACRONYMS = {
     "genes": "GNC",
     "motifs": "MTC",
     "operons": "OPC",
+    "organisms": "ORG",
     "products": "PDC",
     "promoters": "PMC",
     "promoterFeatures": "PFC",
