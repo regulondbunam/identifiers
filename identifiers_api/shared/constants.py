@@ -1,6 +1,7 @@
 REGULONDB_DATABASES_ACRONYMS = {
     "regulondbmultigenomic": "RDB",
-    "regulondbht": "RHT"
+    "regulondbht": "RHT",
+    "regulondbdatamarts": "RDM"
 }
 
 RDB_MULTIGENOMIC_SUBCLASS_ACRONYMS = {
@@ -9,6 +10,7 @@ RDB_MULTIGENOMIC_SUBCLASS_ACRONYMS = {
     "genes": "GNC",
     "motifs": "MTC",
     "operons": "OPC",
+    "organisms": "ORG",
     "products": "PDC",
     "promoters": "PMC",
     "promoterFeatures": "PFC",
@@ -87,5 +89,6 @@ ONTOLOGY_SUBCLASS_ACRONYMS = {
 
 # TODO: Ver con Gabo y Edgar
 DATAMARTS_ACRONYMS = {
-    "overviews": ""
+    "overviews": "",
+    "growthCondition": "GCC"
 }
